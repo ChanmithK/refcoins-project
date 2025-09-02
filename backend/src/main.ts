@@ -11,7 +11,13 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      /\.vercel\.app$/, // Allow all Vercel domains
+      /\.netlify\.app$/, // Allow all Netlify domains
+      /\.render\.com$/, // Allow all Render domains
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
