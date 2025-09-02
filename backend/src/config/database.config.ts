@@ -8,10 +8,7 @@ export const getDatabaseConfig = (configService: ConfigService) => ({
     maxPoolSize: 10,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
-    bufferMaxEntries: 0,
     retryWrites: true,
     retryReads: true,
-    ssl: true,
-    tlsAllowInvalidCertificates: false,
   },
 });
