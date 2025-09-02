@@ -85,8 +85,8 @@ A comprehensive, modern real estate management platform built with cutting-edge 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/estatehub.git
-   cd estatehub
+   git clone https://github.com/ChanmithK/refcoins-project.git
+   cd refcoins-project
    ```
 
 2. **Setup Frontend**
@@ -116,7 +116,7 @@ A comprehensive, modern real estate management platform built with cutting-edge 
 
    ```env
    PORT=3001
-   MONGODB_URI=mongodb://localhost:27017/estatehub
+   MONGODB_URI=mongodb://localhost:27017/refcoins-project
    CLOUDINARY_CLOUD_NAME=your_cloud_name
    CLOUDINARY_API_KEY=your_api_key
    CLOUDINARY_API_SECRET=your_api_secret
