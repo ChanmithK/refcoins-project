@@ -4,7 +4,6 @@ services:
     env: node
     buildCommand: cd backend && npm install && npm run build
     startCommand: cd backend && npm run start:prod
-    rootDir: backend
     envVars:
       - key: PORT
         value: 10000
