@@ -14,12 +14,14 @@ async function bootstrap() {
     origin: [
       'http://localhost:3000',
       'http://localhost:3001',
+      'https://refcoins-project.netlify.app',
       /\.vercel\.app$/, // Allow all Vercel domains
       /\.netlify\.app$/, // Allow all Netlify domains
       /\.render\.com$/, // Allow all Render domains
     ],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   });
 
   app.useGlobalPipes(
