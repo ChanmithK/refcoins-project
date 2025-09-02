@@ -19,25 +19,15 @@ export default function AdminDashboard() {
 
   // Calculate statistics with proper error handling
   const forSaleCount = properties.filter((property) => {
-    // Handle potential case sensitivity or whitespace issues
     const status = property?.status?.trim();
     return status === "For Sale";
   }).length;
 
   const forRentCount = properties.filter((property) => {
-    // Handle potential case sensitivity or whitespace issues
     const status = property?.status?.trim();
     return status === "For Rent";
   }).length;
 
-  // Debug logging to help identify issues
-  if (!isLoading && !error) {
-    console.log("Dashboard Statistics:");
-    console.log("- Total properties:", totalProperties);
-    console.log("- For Sale:", forSaleCount);
-    console.log("- For Rent:", forRentCount);
-    console.log("- Raw data sample:", properties.slice(0, 3));
-  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="space-y-8 p-6">

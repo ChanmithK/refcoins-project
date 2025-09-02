@@ -13,10 +13,12 @@ export class UploadService {
     });
   }
 
+  // Upload an image to Cloudinary
   async uploadImage(file: Express.Multer.File): Promise<string> {
     return await this.uploadToCloudinary(file);
   }
 
+  // Private method to upload to Cloudinary
   private async uploadToCloudinary(file: Express.Multer.File): Promise<string> {
     return new Promise((resolve, reject) => {
       cloudinary.uploader

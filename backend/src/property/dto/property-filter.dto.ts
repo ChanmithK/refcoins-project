@@ -8,6 +8,7 @@ import {
 } from 'class-validator';
 import { Transform } from 'class-transformer';
 
+// Property filter DTO
 export class PropertyFilterDto {
   @IsOptional()
   @IsString()

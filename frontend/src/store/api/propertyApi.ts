@@ -18,6 +18,7 @@ export const propertyApi = createApi({
   }),
   tagTypes: ["Property"],
   endpoints: (builder) => ({
+    // Get Properties
     getProperties: builder.query<PropertyListResponse, PropertyFilterDto>({
       query: (filters) => ({
         url: "/properties",
@@ -25,16 +26,22 @@ export const propertyApi = createApi({
       }),
       providesTags: ["Property"],
     }),
+
+    // Get Property
     getProperty: builder.query<Property, string>({
       query: (id) => `/properties/${id}`,
       providesTags: (result, error, id) => [{ type: "Property", id }],
     }),
+
+    // Get Property By Slug
     getPropertyBySlug: builder.query<Property, string>({
       query: (slug) => `/properties/slug/${slug}`,
       providesTags: (result, error, slug) => [
         { type: "Property", id: result?._id },
       ],
     }),
+
+    // Create Property
     createProperty: builder.mutation<Property, CreatePropertyDto>({
       query: (property) => ({
         url: "/properties",
@@ -43,6 +50,8 @@ export const propertyApi = createApi({
       }),
       invalidatesTags: ["Property"],
     }),
+
+    // Update Property
     updateProperty: builder.mutation<
       Property,
       { id: string; property: UpdatePropertyDto }
@@ -54,9 +63,10 @@ export const propertyApi = createApi({
       }),
       invalidatesTags: (result, error, { id }) => [
         { type: "Property", id },
-        "Property", // This invalidates all property list queries
+        "Property",
       ],
     }),
+    // Delete Property
     deleteProperty: builder.mutation<void, string>({
       query: (id) => ({
         url: `/properties/${id}`,

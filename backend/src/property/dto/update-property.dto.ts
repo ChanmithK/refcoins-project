@@ -13,6 +13,7 @@ import {
 } from 'class-validator';
 import { Transform } from 'class-transformer';
 
+// UpdatePropertyDto
 export class UpdatePropertyDto {
   @IsOptional()
   @IsString()

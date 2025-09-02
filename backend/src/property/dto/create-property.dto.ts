@@ -12,6 +12,7 @@ import {
 } from 'class-validator';
 import { Transform } from 'class-transformer';
 
+// CreatePropertyDto
 export class CreatePropertyDto {
   @IsString()
   @IsNotEmpty({ message: 'Title is required' })

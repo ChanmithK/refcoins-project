@@ -17,6 +17,7 @@ export class PropertyService {
     @InjectModel(Property.name) private propertyModel: Model<PropertyDocument>,
   ) {}
 
+  // Create a new property
   async create(createPropertyDto: CreatePropertyDto): Promise<Property> {
     try {
       const createdProperty = new this.propertyModel(createPropertyDto);
@@ -34,6 +35,7 @@ export class PropertyService {
     }
   }
 
+  // Search for properties with filters and pagination
   async findAll(filterDto: PropertyFilterDto) {
     try {
       const {
@@ -91,6 +93,7 @@ export class PropertyService {
     }
   }
 
+  // Find property by slug
   async findBySlug(slug: string): Promise<Property> {
     try {
       const property = await this.propertyModel.findOne({ slug }).exec();
@@ -108,6 +111,7 @@ export class PropertyService {
     }
   }
 
+  // Find property by ID
   async findOne(id: string): Promise<Property> {
     try {
       if (!id.match(/^[0-9a-fA-F]{24}$/)) {
@@ -128,6 +132,7 @@ export class PropertyService {
     }
   }
 
+  // Update property by ID
   async update(
     id: string,
     updatePropertyDto: UpdatePropertyDto,
@@ -164,6 +169,7 @@ export class PropertyService {
     }
   }
 
+  // Remove property by ID
   async remove(id: string): Promise<void> {
     try {
       if (!id.match(/^[0-9a-fA-F]{24}$/)) {

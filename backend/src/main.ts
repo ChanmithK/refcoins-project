@@ -15,7 +15,6 @@ async function bootstrap() {
       'http://localhost:3000',
       'http://localhost:3001',
       'https://refcoins-project.netlify.app',
-      /\.vercel\.app$/, // Allow all Vercel domains
       /\.netlify\.app$/, // Allow all Netlify domains
       /\.render\.com$/, // Allow all Render domains
     ],

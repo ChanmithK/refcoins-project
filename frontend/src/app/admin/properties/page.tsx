@@ -34,14 +34,6 @@ export default function PropertiesPage() {
     return status === "For Sale" || status === "For Rent";
   }).length;
 
-  // Debug logging to help identify issues
-  if (!isLoading && !error) {
-    console.log("Properties Page Statistics:");
-    console.log("- Total:", totalProperties);
-    console.log("- For Sale:", forSaleCount);
-    console.log("- For Rent:", forRentCount);
-    console.log("- Active:", activeListings);
-  }
   return (
     <div className="space-y-8">
       {/* Header */}

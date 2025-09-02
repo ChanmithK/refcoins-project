@@ -3,6 +3,7 @@ import { Document } from 'mongoose';
 
 export type PropertyDocument = Property & Document;
 
+// Property Schema
 @Schema({ timestamps: true })
 export class Property {
   @Prop({ required: true, trim: true, maxlength: 200 })
