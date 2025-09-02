@@ -13,7 +13,13 @@ import { getDatabaseConfig } from './config/database.config';
       isGlobal: true,
     }),
     MongooseModule.forRootAsync({
-      useFactory: getDatabaseConfig,
+      useFactory: (configService: ConfigService) => {
+        const config = getDatabaseConfig(configService);
+        return {
+          uri: config.uri,
+          ...config.connectionOptions,
+        };
+      },
       inject: [ConfigService],
     }),
     ServeStaticModule.forRoot({
